@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document metadata and styling/scripts -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Car Dealership</title>
+    <!-- Link to the CSS stylesheet for styling the page -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Import JavaScript files for app logic and car data -->
+    <script src="./JavaScript/usedCars_378dc6f36ec3dcd649ec036444fc4469.js" defer></script>
+    <script src="./JavaScript/app.js" defer></script>
+</head>
+<body>
+    <!-- Header displaying the title of the page -->
+    <header>
+        <h1>Our Used Cars</h1>
+    </header>
+    <main class="container">
+        <!-- Sidebar for filter options -->
+        <aside class="filters">
+            <h2>Filter by</h2>
+            <form id="filterForm">
+                <!-- Filter inputs for year, make, mileage, price, and color -->
+                <label for="minYear">Min. Year:</label>
+                <input type="number" id="minYear" name="minYear">
+
+                <label for="maxYear">Max. Year:</label>
+                <input type="number" id="maxYear" name="maxYear">
+
+                <label for="make">Make:</label>
+                <select id="make" name="make" multiple>
+                    <!-- Options for car make filters -->
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Nissan">Nissan</option>
+                    <!-- Additional car brands for selection -->
+                    <!-- ... -->
+                </select>
+
+                <!-- Other filters for mileage, price range, and color -->
+                <label for="maxMileage">Max Mileage:</label>
+                <input type="number" id="maxMileage" name="maxMileage" placeholder="e.g., 30000">
+
+                <label for="minPrice">Min. Price:</label>
+                <input type="number" id="minPrice" name="minPrice">
+
+                <label for="maxPrice">Max. Price:</label>
+                <input type="number" id="maxPrice" name="maxPrice">
+
+                <label for="color">Color:</label>
+                <select id="color" name="color" multiple>
+                    <!-- Color options for filtering -->
+                    <option value="Silver">Silver</option>
+                    <option value="White">White</option>
+                    <!-- ... -->
+                </select>
+
+                <!-- Buttons to apply and reset filters -->
+                <button type="button" onclick="applyFilters()">Apply Filters</button>
+                <button type="button" onclick="resetFilters()">Reset Filters</button>
+            </form>
+        </aside>
+        <!-- Section displaying car listings -->
+        <section class="car-listing">
+            <h2>Available Cars (<span id="carCount">0</span>)</h2>
+            <!-- Container for car cards -->
+            <div id="carsContainer" class="cars-grid"></div>
+            <!-- Message for no matching results -->
+            <p id="noResults" style="display: none;">No cars match your criteria. Please try again.</p>
+        </section>
+    </main>
+</body>
+</html>
